@@ -1,0 +1,18 @@
+$font-base:"Helvetica Neue";
+$base-color:#0d6efd;
+$secondary-color:rgba(33, 37, 41, 0.75);
+$grey : rgb(222, 226, 230);
+
+$font-size: (
+	"1":"56px",
+	"2":"24px",
+	"3":"20px",
+	"4":"16px",
+	"5":"0.5em",
+	"6":"40px",
+	"7":"36px",
+);
+
+@function getFontSize($key){
+	@return unquote(map-get($font-size,""+$key));
+}

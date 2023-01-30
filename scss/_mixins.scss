@@ -1,0 +1,137 @@
+@import "setting";
+
+@mixin card(
+	$background:rgba(33, 37, 41, 0.03),
+	$border-background:$secondary-color,
+	$colorbutton:$base-color,
+	$font-color-title:black,
+	$background-button:white,
+	$hover-color:white,
+	$hover-background:$base-color
+){
+	display:flex;
+	width:100%;
+	flex-direction:column;
+	text-align:center;
+	justify-content:center;
+	border:0.5px solid $border-background;
+	border-radius: 10px;
+	overflow:hidden;
+	box-shadow:  0 0.5rem 1rem rgba(33,37,41, 0.15);
+	&__header{
+		background-color:$background;
+		border-bottom:0.5px solid $secondary-color ;
+		p{
+			font-size:getFontSize(2);
+			color:$font-color-title;
+			margin:16px;
+		}
+	}
+	&__body{
+		padding:16px;
+		&__title{
+			font-size:getFontSize(6);
+			margin:0px;
+			&__text-muted{
+				font-size:getFontSize(7);
+				color:rgba(33, 37, 41, 0.75);
+			}
+		}
+		&__list{
+			list-style: none;
+			padding:0px;
+			line-height:24px;
+		}
+		&__button{
+			width:100%;
+			background-color:$background-button;
+			color:$colorbutton;
+			border:1px solid $base-color;
+			border-radius:10px;
+			font-size:getFontSize(3);
+			padding:16px;
+			transition: all 0.2s;
+			&:hover {
+        background-color:$hover-background;
+				color:$hover-color;
+   		}
+		}
+
+
+	}
+}
+
+
+@mixin plans{
+	p {
+		font-size:getFontSize(6);
+		text-align:center;
+	}
+	table{
+		width:100%;
+		border-collapse: collapse;
+		tr{
+			border-bottom:1px solid $grey;
+			th{
+				padding:10px;
+			}
+			td{
+				text-align:center;
+			}
+			svg {
+				width:24px;
+				height:24px;
+			}
+		}
+		
+		tr:not(:first-child) {
+			th{
+				width:22%;
+				text-align:left;
+			}
+		}
+		.checked::before{
+			display:block;
+			content:'';
+			background-image:url("../assets/check.svg");
+			background-size: 24px 24px;
+			height: 24px;
+  		width: 24px;
+			margin:auto;
+			
+		}
+		
+	}
+}
+
+@mixin footer{
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;
+	margin-top:4em;
+	border-top:1px solid $grey;
+	padding-top:3em;
+	padding-bottom:5em;
+	svg{
+		color:pink;
+	}
+	div {
+		p {
+			font-size:getFontSize(3);
+		}
+		ul{
+			padding:0px;
+			li{
+				list-style: none;
+				a{
+					color: $secondary-color;
+  				text-decoration: none;
+					line-height: 24px
+				}
+			}
+		}
+	}
+}
+
+
+
